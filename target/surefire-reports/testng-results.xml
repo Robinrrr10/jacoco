@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="1914" started-at="2019-10-22T19:49:14Z" finished-at="2019-10-22T19:49:16Z">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="1914" started-at="2019-10-22T19:49:14Z" finished-at="2019-10-22T19:49:16Z">
+      <class name="com.github.jacoco.AppTest">
+        <test-method status="PASS" signature="testAppHealth()[pri:0, instance:com.github.jacoco.AppTest@2f7a2457]" name="testAppHealth" duration-ms="1833" started-at="2019-10-22T19:49:14Z" finished-at="2019-10-22T19:49:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAppHealth -->
+      </class> <!-- com.github.jacoco.AppTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
