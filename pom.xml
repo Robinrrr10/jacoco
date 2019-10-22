@@ -14,7 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jacoco.version>0.7.5.201505241946</jacoco.version>
 	<jacoco.ant.version>0.7.8</jacoco.ant.version>
-	<app.host>localhost</app.host>
+	<app.host>192.168.40.138</app.host>
 	<app.port>36320</app.port>
 	<skip.dump>true</skip.dump>
 	<skip.int.tests.report>true</skip.int.tests.report>
