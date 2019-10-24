@@ -13,7 +13,7 @@ public class AppTest
 	
 	@Test
 	public void testAppHealth() throws ClientProtocolException, IOException {
-		String apiUrl = "http://localhost:8080/simplerestapp/v1/base/healthCheck";
+		String apiUrl = "http://192.168.40.138:8080/simplerestapp/v1/base/healthCheck";
 		String response = null;
 		response = app.httpClientTest(apiUrl);
 		Assert.assertEquals(response, "{\"isAlive\":true}");

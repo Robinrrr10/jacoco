@@ -16,7 +16,7 @@
 	<jacoco.ant.version>0.7.8</jacoco.ant.version>
 	<app.host>192.168.40.138</app.host>
 	<app.port>36320</app.port>
-	<skip.dump>true</skip.dump>
+	<skip.dump>false</skip.dump>
 	<skip.int.tests.report>true</skip.int.tests.report>
   </properties>
 
@@ -62,7 +62,7 @@
 							<goal>dump</goal>
 						</goals>
 						<configuration>
-							<destFile>${project.build.directory}/jacoco-it-${app.host}:${app.port}.exec</destFile>
+							<destFile>${project.build.directory}/jacoco-it-${app.host}-${app.port}.exec</destFile>
 							<address>${app.host}</address>
 							<port>${app.port}</port>
 							<reset>false</reset>
@@ -99,7 +99,7 @@
 						</configuration>
 					</execution>
 				</executions>
-				<configuration>
+				<configuration>		
 					<propertyName>jacoco.agent.argLine</propertyName>
 					<skip>false</skip>
 					<append>true</append>
