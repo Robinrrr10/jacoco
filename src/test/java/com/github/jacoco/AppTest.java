@@ -27,4 +27,11 @@ public class AppTest
 		Assert.assertEquals(response, "[{\"id\":1,\"name\":\"Ramu\",\"age\":24},{\"id\":2,\"name\":\"Suresh\",\"age\":38}]");
 	}
 	
+	@Test
+	public void testSingleUser() throws ClientProtocolException, IOException {
+		String apiUrl = "http://192.168.40.138:8080/simplerestapp/v1/accounts/2";
+		String response = null;
+		response = app.httpClientTest(apiUrl);
+		Assert.assertEquals(response, "[{\"id\":1,\"name\":\"Ramu\",\"age\":24},{\"id\":2,\"name\":\"Suresh\",\"age\":38}]");
+	}
 }
