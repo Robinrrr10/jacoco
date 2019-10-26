@@ -42,6 +42,7 @@ Please refer sampleFiles for jenkins configuration
 
 Other notes
 -----------
+every time we need to restart tomcat before starting the test. or else we will get old one also
 
 
 
