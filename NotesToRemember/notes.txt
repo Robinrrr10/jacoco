@@ -16,7 +16,10 @@ mvn clean install -PremoteCodeCoverage
 In jenkins configuration   //I got correct report only on jenkins   //Please refer screenshot images in sampleFiles
 ------------------------
 1. Add test project git repository in source code management
-2. In prestep, add below shell command to clone application git, go inside project and create war or jar using maven install package command like below
+2.a In prestep, add remote command restart tomcat using below command
+sh /home/apache-tomcat-8.5.42/bin/shutdown.sh
+sh /home/apache-tomcat-8.5.42/bin/startup.sh
+2.b In prestep, add below shell command to clone application git, go inside project and create war or jar using maven install package command like below
 git clone https://github.com/Robinrrr10/simplerestapp.git
 cd simplerestapp
 mvn clean install package
