@@ -1,7 +1,7 @@
 1. Add jacocoagent.jar in application server in any path and note the path  Eg:/home/jacocoagent/jacocon/jacocoagent.jar
 2. Add below line JAVA_OPTS in start script or catalina.sh in tomcat/bin
- -javaagent:/home/jacocoagent/jacocon/jacocoagent.jar=port=36320,destfile=jacoco-it.exec,output=tcpserver,address=*
- Eg: JAVA_OPTS="$JAVA_OPTS -javaagent:/home/jacocoagent/jacocon/jacocoagent.jar=port=36320,destfile=jacoco-it.exec,output=tcpserver,address=*"
+ -javaagent:/home/jacocoagent/jacocon/jacocoagent.jar=port=36320,output=tcpserver,address=*
+ Eg: JAVA_OPTS="$JAVA_OPTS -javaagent:/home/jacocoagent/jacocon/jacocoagent.jar=port=36320,output=tcpserver,address=*"
    //Please refer catalina.sh in sampleFiles
  3. Start tomcat server and check api and then stop tomcat server   //While stopping may be it can give error. dont worry about it
  4. Restart tomcat
@@ -11,10 +11,7 @@
  
  Below maven command is used to run test and take report
  ----------------------------
-mvn test jacoco:dump@pull-test-data -Dapp.host=192.168.40.138 -Dapp.port=36320 -Dskip.dump=false
-mvn jacoco:merge@merge-test-data -Dskip.dump=false
-mvn antrun:run@generate-report -Dskip.int.tests.report=false
-
+mvn clean install -PremoteCodeCoverage
 
 In jenkins configuration   //I got correct report only on jenkins   //Please refer screenshot images in sampleFiles
 ------------------------
@@ -24,10 +21,7 @@ git clone https://github.com/Robinrrr10/simplerestapp.git
 cd simplerestapp
 mvn clean install package
 3. In Build, below maven command to test and take jacoco dump
-mvn test jacoco:dump@pull-test-data -Dapp.host=192.168.40.138 -Dapp.port=36320 -Dskip.dump=false 
-4. In post step, add below shell command to merge and report 
-mvn jacoco:merge@merge-test-data -Dskip.dump=false
-mvn antrun:run@generate-report -Dskip.int.tests.report=false
+mvn clean install -PremoteCodeCoverage
 5. In post build action, add Record jacoco coverage report
 5.1 in path to directory field add application target classes like below 
 **/simplerestapp/target/classes

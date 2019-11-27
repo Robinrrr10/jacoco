@@ -252,7 +252,7 @@ JAVA_OPTS="$JAVA_OPTS $JSSE_OPTS"
 # Do this here so custom URL handles (specifically 'war:...') can be used in the security policy
 JAVA_OPTS="$JAVA_OPTS -Djava.protocol.handler.pkgs=org.apache.catalina.webresources"
 
-JAVA_OPTS="$JAVA_OPTS -javaagent:/home/jacocoagent/jacocon/jacocoagent.jar=port=36320,destfile=jacoco-it.exec,output=tcpserver,address=*"
+JAVA_OPTS="$JAVA_OPTS -javaagent:/home/jacocoagent/jacocon/jacocoagent.jar=port=36320,output=tcpserver,address=*"
 
 # Set juli LogManager config file if it is present and an override has not been issued
 if [ -z "$LOGGING_CONFIG" ]; then
