@@ -41,6 +41,9 @@ Other notes
 -----------
 every time we need to restart tomcat before starting the test. or else we will get old one also
 
+If you face any issue while tomcat shutdown. It is better to below if statement. // Here when starting only it will add this 
+elif [ "$1" = "start" ] ; then
+  JAVA_OPTS="$JAVA_OPTS -javaagent:/home/jacocoagent.jar=port=36320,output=tcpserver,port=36320,address=*"
 
 
 
