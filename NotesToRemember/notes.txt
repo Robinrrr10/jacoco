@@ -9,13 +9,13 @@
 //Please open the port in server given in javaagent. we can give any port
 
  
- Below maven command is used to run test and take report
+ Below maven command is used to run test and take report. // Important: mvn "test" wont work here. only mvn "install" will work
  ----------------------------
 mvn clean install -PremoteCodeCoverage
 
 In jenkins configuration   //I got correct report only on jenkins   //Please refer screenshot images in sampleFiles
 ------------------------
-1. Add test project git repository in source code management
+1. Add test project git repository in source code management    // create maven job in jenkins. Freestype job is not working sometime
 2.a In prestep, add remote command restart tomcat using below command
 sh /home/apache-tomcat-8.5.42/bin/shutdown.sh
 sh /home/apache-tomcat-8.5.42/bin/startup.sh
@@ -23,7 +23,7 @@ sh /home/apache-tomcat-8.5.42/bin/startup.sh
 git clone https://github.com/Robinrrr10/simplerestapp.git
 cd simplerestapp
 mvn clean install package
-3. In Build, below maven command to test and take jacoco dump
+3. In Build, below maven command to test and take jacoco dump. Important: mvn "test" wont work here. only mvn "install" will work
 mvn clean install -PremoteCodeCoverage
 5. In post build action, add Record jacoco coverage report
 5.1 in path to directory field add application target classes like below 
